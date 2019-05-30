@@ -16,7 +16,6 @@ __cluster_spaces = {'kmeans':0,'kernel-kmeans':1,'spectral':2}
 __fig_frames_cache = {}
 __fig_frames_dirty = {}
 
-'''
 def showClustering(datas, C, u=None, title='', k=None, color_k = ['blue', 'darkorange', 'green', 'deeppink']):
 
     if k == None:
@@ -30,8 +29,9 @@ def showClustering(datas, C, u=None, title='', k=None, color_k = ['blue', 'darko
     
     plt.title(title)
     plt.legend()
-#    plt.show()
-'''
+    plt.show()
+    #plt.savefig(str(id(C)) + '.png')
+
 
 # dataset, Rnk, mean, cluster
 def __showClustering(datas, C, u, k, color_k = ['blue', 'darkorange', 'green', 'deeppink']):
@@ -43,11 +43,11 @@ def __showClustering(datas, C, u, k, color_k = ['blue', 'darkorange', 'green', '
             l, = plt.plot(u[i][0], u[i][1], 'o', c=color_k[i], markersize=50.0, alpha=0.3)
             frame.append(l)
             # add center to the mean
-            l, = plt.plot(u[i][0], u[i][1], '*', c=color_k[i], alpha=0.3)
+            l, = plt.plot(u[i][0], u[i][1], '*', c=color_k[i], alpha=0.3, label='clustering {} mean'.format(i+1))
             frame.append(l)
         clustering_datas = datas[C[:,i]==1,:]
         # cluster datapoints
-        l, = plt.plot(clustering_datas[:,0], clustering_datas[:,1], '.', c=color_k[i])
+        l, = plt.plot(clustering_datas[:,0], clustering_datas[:,1], '.', c=color_k[i], label='clustering '+str(i+1))
         frame.append(l)
 
     return frame

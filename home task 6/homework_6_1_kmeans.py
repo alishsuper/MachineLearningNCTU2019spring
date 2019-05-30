@@ -16,5 +16,3 @@ cf.AddClusteringProcess(0, data_source, k, all_kmean_c, all_kmean_u)
 
 # save the video
 cf.GenerateAllClusteringProcess()
-
-
