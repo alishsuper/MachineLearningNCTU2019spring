@@ -1,0 +1,10 @@
+Dear TAs! 
+I mixed up a little bit in the main report 'report_don't_consider_sne_part'. 
+Please don't consider sne-part. 
+I added additional report 'tsne_ssne_part'. 
+Please consider it.
+
+Thanks in advance!
+
+Best regards,
+Alisher Mukashev
